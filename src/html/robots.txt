@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /
+Disallow: /careers/
+Disallow: /contracts/
+Disallow: /contents/
+
+Disallow: /admin/
+Disallow: /assets/
+Disallow: /data/

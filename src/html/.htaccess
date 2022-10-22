@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^([-\w]+)/?$ $1.php [NC,L]
+RewriteRule ^careers/([\d]+)$ careers/job-description.php?jobid=$1 [NC,L]
+RewriteRule ^careers/([\d]+)/apply$ careers/job-apply.php?jobid=$1 [NC,L]
+RewriteRule ^careers/([\d]+)/apply/thanks$ careers/job-apply-thanks.php?jobid=$1 [NC,L]
+RewriteRule ^contracts/([-\w]+)$ contracts/$1.php [NC,L]
+RewriteRule ^data/([-\w]+).json$ data/$1.php [NC,L]
+RewriteRule ^admin/$ admin/index.php [NC,L]
+RewriteRule ^admin/([-\w]+)$ admin/$1.php [NC,L]
+errordocument 404 /404
