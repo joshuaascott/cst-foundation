@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    container_name: mysql8
+    container_name: cstsql
     image: mysql:latest
     environment:
       - MYSQL_DATABASE=cst
@@ -12,15 +12,17 @@ services:
     volumes:
       - "./db:/docker-entrypoint-initdb.d"
   phpmyadmin:
-    container_name: phpmyadmin
+    container_name: cstpma
     image: phpmyadmin/phpmyadmin
     ports:
       - 8001:80
     environment:
       - PMA_HOST=db
       - PMA_PORT=3306
+    depends_on:
+      - db
   web:
-    container_name: php8
+    container_name: cstweb
     build:
       context: .
       dockerfile: Dockerfile

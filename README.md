@@ -54,17 +54,27 @@
 
 ## Run (Locally)
 
-- Execute the following to start and run locally
+- Execute the following to build and and run locally
 
     ```bash
-    docker-compose up
+    docker-compose up -d
     ```
-- Open a browser and navigate to `http://localhost`
-- Execute the following from Git Bash to stop and remove containers
+- If there are issues building the stack, execute the following from Git Bash to stop, remove **ALL** containers, images, and volumes then rebuild the stack.
 
     ```bash
     # Ctrl + C
-    ./stop.sh
+    ./cleanup.sh
+    docker-compose up -d
+    ```
+- To stop the stack, issue the following command:
+
+    ```bash
+    docker compose stop
+    ```
+- To restart the stack, execute the following command:
+
+    ```bash
+    docker compose start
     ```
 
 ## Update Job Postings
